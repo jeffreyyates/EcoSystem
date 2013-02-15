@@ -12,7 +12,7 @@ using namespace std;
 
 int main() {
 //here is a new comment that I am adding
-
+//wouter's edit
    string input = "";
 
 	 // How to get a string/sentence with spaces

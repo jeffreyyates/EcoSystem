@@ -1,0 +1,22 @@
+Interactions:
+Eat - gotFood(), gotEaten(), predatorLevel
+Fight - anger, predatorLevel, energy, 
+Hunt - getVisualRange(), predatorLevel, speed, call Chase when found food
+Chase - visual range, speed, energy of both animals, if can't find prey call Hunt again, escape route for prey
+Play - anger--, energy--
+Reproduce - 
+Sleep - have to find a safe place to sleep, doNothing()
+
+
+
+Need from Animal class:
+predatorLevel - herbivore = 0, carnivores are above (10 highest?)
+male/female
+energy
+anger
+speed
+visual range
+hunger level
+gotFood()
+gotEaten()
+doNothing()

@@ -18,17 +18,17 @@ class Gamesquare{
 
 public:
 	Gamesquare();
-	Gamesquare(int newx, int newy)
-	~Gamesquare(){};
-
-	void addAnimal(Animal* newptr);
-	void addPlant(Plant* newptr);
-	void addWeather(Weather* newptr);
-
-	Animal* getAnimalptr();
-	Plant* getPlantptr();
-	Weather* getWeatherptr();
-	int getTerraincode();
+	Gamesquare(int newx, int newy);
+//	~Gamesquare(){};
+//
+//	void addAnimal(Animal* newptr);
+//	void addPlant(Plant* newptr);
+//	void addWeather(Weather* newptr);
+//
+//	Animal* getAnimalptr();
+//	Plant* getPlantptr();
+//	Weather* getWeatherptr();
+//	int getTerraincode();
 	int getXloc();
 	int getYloc();
 
@@ -36,6 +36,7 @@ public:
 	void setXloc(int newx);
 	void setYloc(int newy);
 
+	WORD getSquareColor();
 };
 
 

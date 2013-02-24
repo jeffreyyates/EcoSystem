@@ -9,6 +9,7 @@
 #define GAMEBOARD_H_
 #define X 10
 #define Y 10
+#include"gamesquare.h"
 
 class Gameboard{
 	Gamesquare board[X][Y];

@@ -10,7 +10,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-#include <gameboard.h>
+#include <windows.h>
+#include "gameboard.h"
+#include"Gamesquare.h"
+#include"Animal.h"
+#include"Plant.h"
+#include"Weather.h"
+#include"Gameboard.h"
+
 using namespace std;
 
 Gameboard::Gameboard(){
@@ -18,18 +25,44 @@ Gameboard::Gameboard(){
 	int j;
 	for(i = 0; i < X; i++){
 		for(j = 0; j < Y; j++){
-			board[X][Y] = new Gamesquare();
+			board[X][Y] = *(new Gamesquare());
 		}
 	}
 }
 
-void Gameboard::printBoard(int xcenter, int ycenter, int size){
-	//Variables for each attribute of the square
-	//For loop around all squares
-	//If there is an animal, first animal code -> animal attribute
-	//If there is...
-	//Set terrain attribute
-	//Print all attributes in square using GUI, background, w/e
+void Gameboard::printBoard(Gameboard thisboard, int xcenter, int ycenter, int size){
+	int i;
+	int j;
+	WORD colorcode;
+	char text;
+	animal* aptr;
+	plant* pptr;
 
-	//FIND OUT FROM SANTOS
+	cout<<endl<<endl<<endl<<endl;
+	for(i = 0; i < X; i++){
+			for(j = 0; j < Y; j++){
+				if ((*thisboard[i][j]).getAnimalptr() != NULL){
+					aptr = (*board[i][j]).getAnimalptr();
+				}
+				if ((*thisboard[i][j]).Plantptr() != NULL){
+					pptr = (*board[i][j]).getAnimalptr();
+				}
+				colorcode = (*thisboard[i][j]).getSquareColor();
+
+				//Set the color for that square
+				SetConsoleTextAttribute( hstdout, colorcode );
+
+				//Display blank for no animals
+				//Display animal if there is one
+				//Display a plant if one and no animal
+				if (aptr == NULL && pptr == NULL) cout<<" ";
+				else if (aptr == NULL && pptr != NULL) cout<<pptr.getplantname();
+				else if (pptr == NULL && aptr != NULL) cout<<aptr.whatisyourname();
+				else cout<<aptr.whatisyourname();
+
+		}
+	}
 }
+
+
+
